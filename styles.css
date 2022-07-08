@@ -1,0 +1,105 @@
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    font-family: Courier;
+    scroll-behavior: smooth;
+  }
+}
+
+nav {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  font-size: 28px;
+  overflow: scroll;
+}
+
+.nav-link {
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.first-nav-link {
+  padding-bottom: 30px;
+  font-size: 37px !important;
+}
+
+.main-section {
+  padding-left: 42%;
+}
+
+nav > a {
+  text-decoration: none;
+  color: #000000;
+}
+
+nav > a:hover {
+  color: rgb(145, 180, 150);
+  font-weight: bold;
+}
+
+header {
+  font-size: 35px;
+  padding-top: 10px;
+}
+
+section {
+  padding-bottom: 15px;
+}
+
+p {
+  text-indent: 2em;
+}
+
+code {
+  display: inline-block;
+  min-height: 2em;
+  width: 95%;
+  background-color: rgba(145, 180, 150, 20%);
+  border-radius: 6px;
+  padding: 10px auto;
+  margin-bottom: 15px;
+  
+}
+i {
+  color: blue;
+}
+
+.note {
+  padding-top: -4em !important;
+}
+
+.indent {
+  text-indent: 2em;
+  display: block;
+}
+
+.align {
+  text-align: center;
+  display: block;
+}
+
+.line-height {
+  line-height: 3em;
+}
+
+.letter-spacing {
+  letter-spacing: 3px;
+}
+
+#Further_Resources > a {
+  color: #1413a2;
+  text-decoration: none;
+  font-size: 21px; 
+  display: block;
+  line-height: 3px;
+}
+
+#Further_Resources > a:hover {
+  color: rgb(145, 180, 150);
+}
