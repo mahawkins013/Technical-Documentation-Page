@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML & CSS Documentation Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale="1.0" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+      <nav id="navbar">
+        <header class="nav-item first-nav-link">Basic HTML and CSS Foundations</header>
+        <a href="#Introduction_to_HTML_and_CSS" class="nav-link">Introduction to HTML and CSS</a>
+        <a href="#Introduction_to_HTML_Elements" class="nav-link">Introduction to HTML Elements</a>
+        <a href="#Basic_HTML_Boilerplate" class="nav-link">Basic HTML Boilerplate</a>
+        <a href="#Interactive_HTML_Elements" class="nav-link">Interactive HTML Elements</a>
+        <a href="#Introduction_to_Styling_with_CSS" class="nav-link">Introduction to Styling With CSS</a>
+        <a href="#Common_CSS_Properties" class="nav-link">Common CSS Properties</a>
+        <a href="#CSS_Flexbox" class="nav-link">CSS Flexbox</a>
+        <a href="#Further_Resources" class="nav-link">Further Resources</a>
+        </nav>
+
+      <main id="main-doc">
+        <section class="main-section" id="Introduction_to_HTML_and_CSS">
+          <header>Introduction to HTML and CSS</header>
+          <p>HTML and CSS allow you to build your own webpages! HTML code gives you the basic input and some basic interactive content of your page, while CSS allows you to style that content and really bring your page to life with color, positioning, interactivity, and more. </p>
+          <p>While HTML and CSS are compatible with all browsers, some older versions of browsers will not accept newer features of HTML5 and CSS3, such as HTML5's 'Flexbox',  or CSS3's Grid function.</p>
+          <p>This page will serve as a basic introduction to HTML and CSS concepts and allow you to start building your first webpage, but it is by no means comprehensive.</p>
+        </section>
+
+        <section class="main-section" id="Introduction_to_HTML_Elements">
+          <header>Introduction to HTML Elements</header>
+          <p>Many elements require closing tags, but some do not. When an element does not require a closing tag, you can either proceed with brackets as normal on an opening tag, or you can include a space and a forward slash before the bracket at the end of the element to indicate that no closing tag is needed. For example, the meta element tag, which provides metadata information for your page can be written in either of these two ways:</p>
+          <code>&lt;meta charset="UTF-8">
+            <br> or
+            <br> &lt;meta charset="UTF-8" /&gt;
+            <br> are acceptable ways of writing the &lt;meta&gt; element</code>
+            <p>Below are some other common HTML tags that do not require closing tags:</p>
+            <code>&lt;link /&gt; 
+              <br>&lt;img /&gt;
+              <br>&lt;br&gt;
+            </code>
+            <p>Many elements, however, do require a closing tag, otherwise you will experience errors in your code as following elements will be incorrectly read as the element without the required closing tag.
+            </p>
+            <p>Here are some basic elements that require closing tags:</p>
+            <code>&lt;html&gt;&lt;/html&gt;
+              <br>&lt;head&gt;&lt;/head&gt;
+              <br>&lt;body&gt;&lt;/body&gt;
+              <br>&lt;figure&gt;&lt;/figure&gt;
+            </code>
+        </section>
+
+        <section class="main-section" id="Basic_HTML_Boilerplate">
+          <header>Basic HTML Boilerplate</header>
+          <p>All html websites should contain a basic boilerplate allowing them to be opened as a webpage, and allowing your CSS stylesheet to be read.
+          </p>
+          <p> Each document <i>must</i> start with this declaration to let the browser know it is an html document (without the spaces between the brackets):</p>
+          <code id="doctype">&lt;!DOCTYPE html&gt;</code>
+<p>After your html doctype declaration, you need your html and then your head element to start adding the rest of your boilerplate:</p>
+<code>
+  &lt;html&gt;
+   <br> &lt;head&gt;
+ <br> &lt;/head&gt;
+  <br> &lt;/html&gt;
+</code>
+
+<p>All of your elements will go within the < html > tag. Your first addition to the < head > element will be the title of your page. This will not show up on your page but will provide information for search engine optimization and will show up in the tab for your page as well as in the URL:</p>
+<code> &lt;title&gt;Introduction to HTML and CSS&lt;/title&gt; </code>
+
+<p> Within your head tag, you need to add these meta tags:</p>
+<p>This charset tag specifies the character encoding for your document. 'UTF-8' covers all unicode characters (and supports many languages):</p>
+<code>&lt;meta charset="UTF-8" /&gt;</code>
+<p>This charset tag ensures that your page will fit the screen size of the device it is being viewed on, and that it will set the initial zoom to fill the screen: </p>
+<code> &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; </code>
+<p>This link element will allow you to link your CSS document and add some styling to your page (<i>please note, you can name your css document anything and input this name in place of 'styles.css' below as long as you save it as a css document with .css. Examples: blog.css, styling.css, fun.css</i>):</p>
+<code> &lt;link href="styles.css" rel="stylesheet" type="text/css" /&gt; </code>
+<p>Your resulting basic HTML boilerplate should look like this:</p>
+<code>&lt;!DOCTYPE html&gt;
+  <br>&lt;html&gt
+  <br>&lt;head&gt;
+  <br>&lt;title&gt;<i>Your Title Here</i>&lt/title&gt;
+  <br>&lt;meta charset="UTF-8" /&gt;
+  <br>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  <br>&lt;link rel="stylesheet" href="styles.css" type="text/css" /&gt;
+  <br>&lt;/head&gt;
+  <br>&lt;/html&gt;
+  </code>
+        </section>
+
+        <section class="main-section" id="Interactive_HTML_Elements">
+          <header>Interactive HTML Elements</header>
+          <p>There are many HTML elements that will allow viewers of your page to interact with your site - all without using any CSS!</p>
+          <p>Adding a &lt;textarea&gt; element to you form will allow users to input text. Embedding your textarea within a form element allows you to see a user's input when the form is submitted to the location of your choice. Within the form element, you can either use the 'action' attribute to send form results to a web address, or you can use the 'action' attribute to send form results to an email address.</p>
+          <p>Your textarea element will default to 2 rows and 20 columns. To change these values, you must use the following syntax:</p>
+          <code>&lt;textarea rows="4" cols="40" placeholder="<i>Placeholder text here</i>"&gt;
+            <br>This will result in a textbox with 4 rows and 40 columns. The 'placeholder' attribute ensures that users have an idea of what they should submit in the textbox.
+          </code>
+          <p>In order to submit a form, you need a submit button. There are two ways you can input a submit button:</p>
+          <code>&lt;button type="button"&gt;Submit Your Form Here!&lt;/button&gt;
+            <br>or
+            <br>&lt;input type="submit" value="Submit Your Form here!"&gt;&lt;/input&gt;
+          </code>
+        </section>
+
+        <section class="main-section" id="Introduction_to_Styling_with_CSS">
+          <header>Introduction to Styling with CSS</header>
+          <p>In order to start styling your HTML code with CSS, you must link your CSS document. We addressed this earlier in the Basic HTML Boilerplate section. Your &lt;link&gt; element must go inside your &lt;head&gt; element and must include a 'rel' attribute identifying it as a stylesheet, and an 'href' attribute with the title of the document (<i>including the .css file extension</i>). Including a 'type' attribute identifiying the file as text/css is good practice, but not necessary. The attributes can be written in any order. Notice how this order is different from the one above:</p>
+          <code>&lt;link href="styles.css" rel="stylesheet" type="text/css"</code>
+          <p>Once you have linked your CSS stylesheet, you can begin writing CSS code to style your HTML document!</p>
+          <p>The basic structure of a CSS declaration block is written as follows:</p>
+<code>selector &#123;
+  <br>property: value;
+  <br>&#125;
+</code>
+<p>Here is an example of how you would style all of your paragraph elements (&lt;p&gt;&lt;/p&gt;) to have an indent equivalent to 5 spaces in the size of the paragraph font:</p>
+<code>p &#123;
+  <br> text-indent&colon; 5em&semi;
+  <br>&#125;
+  <br><i>Note: one 'em' is equivalent to one space in the font size of the selected element</i>
+</code>
+<p>If you want to style multiple elements, you can do so by separating selectors by a comma. If you wanted to select your first heading and paragraph elements together for example:</p>
+<code>h1, p &#123;
+  <br>font-family&colon; Courier-New&semi;
+  <br>&#125;
+  </code>
+  <p>Notice that in the above example, the font family value is separated by a dash. Spaces are not recognized in CSS declaration blocks, and indents must be used where spaces exist in html code or in property or value names.</p>
+  <p>One way to style several of the same elements without styling <i>all</i> of the elements of that type is to add class attributes to those that you want to style. For example, if you want to style the first, third, and fourth paragraph elements with red text, you can add class values of "red" to each of these paragraphs, then style the class in CSS:</p>
+  <code><b>HTML:</b>
+  <br>&lt;p class="red"&gt;&lt;/p&gt;
+  <br>&lt;p&gt;&lt;/p&gt;
+  <br>&lt;p class="red"&gt;&lt;/p&gt;
+  <br>&lt;p class="red"&gt;&lt;/p&gt;
+  <br>&lt;p&gt;&lt;/p&gt;
+  <br><br>
+  <b>CSS:</b>
+  <br>.red &#123;
+      <br>color&colon; red&semi;
+      <br>&#125;
+  </code>
+  <p>This code will ensure that only the first, third, and fourth paragraph elements have red text. The second and fifth paragraphs will maintain the default black text.</p>
+  <p>Notice that the way you write a class selector starts with a period: .class</p>
+        </section>
+
+    <section class="main-section" id="Common_CSS_Properties">
+      <header>Common CSS Properties</header>
+      <p>There are over 200 CSS properties you can use to style elements within your page. Here we'll go over some of the more common properties with examples of values:</p>
+      <p>There are several properties you can choose to change the look of the font in your document. Some of these include 'font-family' to change the font style , 'font-size' to change the size of your font from the default for the font in the selected element, 'font-weight' to change your font from normal weight, to bold or to a specific weight value, or 'color' to change the color of your font within the selected element.</p>
+        <code>font-family&colon; Courier-New&semi;
+          <br>font-size&colon; 37px&semi;
+          <br>font-weight&colon; lighter&semi;
+          <br>color&colon; #002a63&semi;
+        </code>
+        <p>In addition to altering the physical appearance of text, you can also alter its position on the page through CSS properties such as:</p>
+          <ul>
+            <br><li>'text-indent' - which alters the indent of your text</li>
+<br><li>'text-align' - which aligns the text within its parent container (left, right, center, justify, inherit)</li> <br><li>'line-height' - which adjusts the spacing between lines of text</li>
+<br><li>'letter-spacing' - which adjusts the spacing between each letter</li> which alter the indent of text, 
+      </ul>
+        <code>
+          <span class="indent">text-indent&colon; 2em&semi;</span> </code>
+          <code>
+            <span class="align">text-align&colon; center&semi;</span>
+            </code>
+         <p><i>Please note that for these two declarations, you must also input a 'display' property value of 'block' for the delcarations to work.</i></p>
+         <code><span class="letter-spacing">letter-spacing&colon; 3px;</span></code>
+
+         <code><span class="line-height">line-height&colon; 3em&semi; 
+      <br>line-height&colon; 3em&semi;</span>
+          </code>
+      </section>
+
+      <section class="main-section" id="CSS_Flexbox">
+        <header>CSS Flexbox</header>
+        <p>CSS Flexbox is a module that allows you to control the sizing, spacing, and positioning of a series of photos within a page and/or container.</p>
+        <p>To begin styling with flexbox, you must first create a container to hold your images, with an id value unique to that container. A common id for your set of photos is 'gallery', and you can create your container with the &lt;div&gt; element.</p>
+        <code><b>HTML:</b>
+          <br>&lt;div class="gallery"&gt;
+          <br>&lt;img src="" /&gt;
+          <br>&lt;img src="" /&gt;
+          <br>&lt;img src="" /&gt;
+          <br>&lt;img src="" /&gt;
+          <br>&lt;img src="" /&gt;
+          <br>&lt;img src="" /&gt;
+          <br>&lt;img src="" /&gt;
+        </code>
+        <p>After adding in the links to your images, you can begin styling your flexbox. The first things you must do are:</p>
+          <ul> 
+            <br><li> Set the container's display value to flex</li>
+            <br><li> Set your flex-wrap value to define how your items will wrap (wrap, no-wrap (resulting in a scroll bar if the items go past the boundary of the container), wrap-reverse) 
+            <br><li>Set the flex-direction (row or column)</li>
+            <br><li> Set the dimensions of your container</ul>
+        <code>
+          .gallery &#123;
+          <br>display&colon; flex&semi;
+          <br>flex-wrap&colon; wrap&semi;
+          <br>flex-direction&colon; row&semi;
+          <br>height&colon; 300px&semi;
+          <br>width&colon; 95%&semi;
+          <br>&#125;
+        </code>
+        <p>The above CSS styling will allow your photos to wrap onto the next row if there is overflow, ensures that the direction of the photos is laid out in rows from left to right (this is the defauly flex-direction value), and gives your container a height of 300px with a width that spans 95% of the page. This responsive width will adjust with the viewer's screen size. The viewport meta tag will ensure that this responsive declaration works on devices of many sizes.</p>
+        <p>CSS properties that can be applied to the items of your flexbox (here, the .gallery)include 'justify-content' to define where images start to generate and define the spacing in betweeen images, 'align-items' to define which side or axis of the items you will choose to align with each other, and 'gap' to control the spacing between images without altering the space on the outer edges of the gallery/ </p>
+        <code>
+          .gallery img &#123;
+          <br>align-items&colon; flex-end&semi;
+          <br>justify-content&colon; space-around&semi;
+          <br>gap&colon; 22px
+          </code>
+          <p>The above styling will ensure that the bottoms of your gallery images are lined up, your images are centered in the container and equally spaced from each other (the spacing on the outer edges will not necessarily be the same as the spacing between the images), and there is an equal gap of 22px between each image.  </p>
+        </section>
+      <section class="main-section" id="Further_Resources">
+        <header>Further Resources</header>
+        <P>Please check out these resources for more in-depth information on HTML and CSS:</p>
+        <br><a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+        <br><a href="https://developer.mozilla.org/en-US/" target="_blank">MDN Web Docs</a>
+
+</section>
+      </main>
+      </body>
+  </html>
